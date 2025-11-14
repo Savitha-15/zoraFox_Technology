@@ -1,31 +1,25 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react"; // install using: npm install lucide-react
+import { Menu, X } from "lucide-react";
 import ContactForm from "./components/ContactForm";
 import "./styles/styles.css";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-    const navLinks = [
+  const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Our Services", href: "#services" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <div className="homepage" id="home">
-      {/* ==================== NAVBAR ==================== */}
-      <motion.nav
-        className="navbar"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="nav-container">
+    <div id="home">
 
-          {/* Logo */}
+      {/* ================= NAVBAR ================= */}
+      <motion.nav className="navbar">
+        <div className="nav-container">
           <h1 className="logo">Nuvoteh</h1>
 
           {/* Desktop Menu */}
@@ -38,22 +32,13 @@ export default function App() {
           </ul>
 
           {/* Hamburger Button */}
-          <button
-            className="menu-btn"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
-          >
+          <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* =============== MOBILE MENU DROPDOWN =============== */}
-        <motion.ul
-          className={`mobile-menu ${isOpen ? "show" : ""}`}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
-          transition={{ duration: 0.3 }}
-        >
+        {/* Mobile Menu */}
+        <ul className={`mobile-menu ${isOpen ? "show" : ""}`}>
           {navLinks.map((link) => (
             <li key={link.name}>
               <a href={link.href} onClick={() => setIsOpen(false)}>
@@ -61,10 +46,10 @@ export default function App() {
               </a>
             </li>
           ))}
-        </motion.ul>
+        </ul>
       </motion.nav>
 
-      {/* ✅ Hero Section */}
+      {/* ================= HERO ================= */}
       <motion.header
         className="hero-section"
         initial={{ opacity: 0, y: -50 }}
@@ -75,14 +60,11 @@ export default function App() {
         <p className="subtitle">Innovative Technology for a Smarter Tomorrow.</p>
         <p>
           Welcome to NUVOTEH - Empowering Digital Innovation. At NUVOTEH, we turn
-          ideas into exceptional digital solutions. From conceptualizing imaginative
-          graphics, implementing cutting-edge websites, to engineering sophisticated
-          IT systems — we innovate precisely and passionately.
+          ideas into exceptional digital solutions.
         </p>
-        <p>Our goal is simple — Innovation that empowers success.</p>
       </motion.header>
 
-      {/* ✅ About Us */}
+      {/* ================= ABOUT US ================= */}
       <motion.section
         className="vision"
         id="about"
@@ -93,40 +75,34 @@ export default function App() {
         <h1>About Us</h1>
 
         <div className="about-boxes">
-          {/* Who We Are */}
           <div className="about-card">
             <div className="emoji">👥</div>
             <h3>Who We Are</h3>
             <p>
-              NUVOTEH is a creative and technology-based company founded by passionate
-              innovators. We unite a diverse team of designers, developers, and thinkers
-              who believe in innovation and quality for every project.
+              NUVOTEH is a creative technology-based company with passionate
+              innovators.
             </p>
           </div>
 
-          {/* Our Vision */}
           <div className="about-card">
             <div className="emoji">👁️</div>
             <h3>Our Vision</h3>
             <p>
-              To be a professional and reliable digital partner built on creativity,
-              quality, and exceptional customer service that empowers success.
+              To be a reliable digital partner built on creativity and quality.
             </p>
           </div>
 
-          {/* Our Mission */}
           <div className="about-card">
             <div className="emoji">💡</div>
             <h3>Our Mission</h3>
             <p>
-              To deliver modern, scalable, and user-friendly digital solutions that help
-              individuals and organizations succeed in the online world.
+              To deliver scalable and user-friendly digital solutions.
             </p>
           </div>
         </div>
       </motion.section>
 
-      {/* ✅ Services */}
+      {/* ================= SERVICES ================= */}
       <motion.section
         className="services"
         id="services"
@@ -138,61 +114,17 @@ export default function App() {
 
         <div className="service-grid">
           {[
-            {
-              img: "/assets/webdevelopment.jpg",
-              title: "Web Development",
-              desc: "Responsive, fast, and user-friendly websites for your business.",
-            },
-            {
-              img: "/assets/appdevelopment.jpg",
-              title: "App Development",
-              desc: "Android/iOS apps designed with smooth, intuitive UI/UX.",
-            },
-            {
-              img: "/assets/digitalmarkerting.jpg",
-              title: "Digital Marketing",
-              desc: "SEO, social media, and advertising campaigns that deliver results.",
-            },
-            {
-              img: "/assets/documentation.jpg",
-              title: "Documentation",
-              desc: "Professional reports, proposals, and business documentation.",
-            },
-            {
-              img: "/assets/seo.jpg",
-              title: "SEO",
-              desc: "Boost your website’s visibility with advanced SEO strategies.",
-            },
-            {
-              img: "/assets/businesspromotion.jpg",
-              title: "Business Promotion",
-              desc: "Creative marketing campaigns to grow your brand.",
-            },
-            {
-              img: "/assets/tradermentership.jpg",
-              title: "Trading Mentorship",
-              desc: "Learn stock, forex, and crypto trading from experienced mentors.",
-            },
-            {
-              img: "/assets/logomarker.jpg",
-              title: "Logo Design",
-              desc: "Unique, memorable, and modern logos for your brand identity.",
-            },
-            {
-              img: "/assets/posterdesign.jpg",
-              title: "Poster Design",
-              desc: "Creative posters and visual designs for your marketing needs.",
-            },
-            {
-              img: "/assets/videoediting.jpg",
-              title: "Video Editing",
-              desc: "Professional video editing with smooth transitions and storytelling.",
-            },
-            {
-              img: "/assets/graphicdesign.jpg",
-              title: "Graphic Design",
-              desc: "Creative, modern, and professional designs that make your brand stand out.",
-            },
+            { img: "/assets/webdevelopment.jpg", title: "Web Development", desc: "Responsive websites for your business." },
+            { img: "/assets/appdevelopment.jpg", title: "App Development", desc: "Android/iOS apps with smooth UI/UX." },
+            { img: "/assets/digitalmarkerting.jpg", title: "Digital Marketing", desc: "SEO & Social media campaigns." },
+            { img: "/assets/documentation.jpg", title: "Documentation", desc: "Professional business documents." },
+            { img: "/assets/seo.jpg", title: "SEO", desc: "Boost your website visibility." },
+            { img: "/assets/businesspromotion.jpg", title: "Business Promotion", desc: "Grow your brand creatively." },
+            { img: "/assets/tradermentership.jpg", title: "Trading Mentorship", desc: "Learn trading from experts." },
+            { img: "/assets/logomarker.jpg", title: "Logo Design", desc: "Modern and unique logo designs." },
+            { img: "/assets/posterdesign.jpg", title: "Poster Design", desc: "Creative poster designs." },
+            { img: "/assets/videoediting.jpg", title: "Video Editing", desc: "Professional video editing." },
+            { img: "/assets/graphicdesign.jpg", title: "Graphic Design", desc: "Make your brand stand out." },
           ].map((service) => (
             <div className="service-card" key={service.title}>
               <img src={service.img} alt={service.title} />
@@ -203,70 +135,63 @@ export default function App() {
         </div>
       </motion.section>
 
-  {/* ✅ Footer / Contact */}
-<motion.footer
-  className="contact"
-  id="contact"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 1 }}
->
-  <h2 className="contact-title">Contact</h2>
+      {/* ================= CONTACT FOOTER ================= */}
+      <motion.footer
+        className="contact"
+        id="contact"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="contact-title">Contact</h2>
 
-  <div className="contact-grid">
-    {/* Left – Form */}
-    <div className="contact-left">
-      <ContactForm />
+        <div className="contact-grid">
+          <div className="contact-left">
+            <ContactForm />
+          </div>
+
+          <div className="contact-right">
+            <h3>Contact Details</h3>
+
+            <p>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:nuvoteh2023@gmail.com">nuvoteh2023@gmail.com</a>
+            </p>
+
+            <p>
+              <strong>LinkedIn:</strong>{" "}
+              <a
+                href="https://www.linkedin.com/in/nuvoteh-creators-510304329"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit LinkedIn
+              </a>
+            </p>
+
+            <p>
+              <strong>Instagram:</strong>{" "}
+              <a
+                href="https://www.instagram.com/nuvoteh_official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @nuvoteh_official
+              </a>
+            </p>
+
+            <p>
+              <strong>Contacts:</strong>
+              <br />📱 99762 57449 (Prakash)
+              <br />📱 91508 56346 (Gokul Nath)
+              <br />📱 83442 29777 (Savitha Lakshmi)
+            </p>
+          </div>
+        </div>
+
+        <p className="footer-end">© 2025 Nuvoteh. All Rights Reserved.</p>
+      </motion.footer>
+
     </div>
-
-    {/* Right – Info */}
-    <div className="contact-right">
-      <h3>Contact Details</h3>
-      <p>
-        <strong>Email:</strong>{" "}
-        <a
-          href="nuvoteh2023@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit Email
-        </a>
-      </p>
-      <p>
-        <strong>LinkedIn:</strong>{" "}
-        <a
-          href="https://www.linkedin.com/in/nuvoteh-creators-510304329"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit LinkedIn
-        </a>
-      </p>
-      <p>
-        <strong>Instagram:</strong>{" "}
-        <a
-          href="https://www.instagram.com/nuvoteh_official"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @nuvoteh_official
-        </a>
-      </p>
-      <p>
-        <strong>Contacts:</strong>
-        <br />
-        📱 99762 57449 (Prakash)
-        <br />
-        📱 91508 56346 (Gokul Nath)
-        <br />
-        📱 83442 29777 (Savitha Lakshmi)
-      </p>
-    </div>
-  </div>
-
-  <p className="footer-end">© 2025 Nuvoteh. All Rights Reserved.</p>
-</motion.footer>
-
-</div>
   );
 }
