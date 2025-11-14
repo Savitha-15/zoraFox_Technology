@@ -23,107 +23,91 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-/* NAVBAR BASE */
+/* ============================= */
+/*        NAVBAR FIXED           */
+/* ============================= */
 .navbar {
   width: 100%;
-  background: #ffffff;
-  padding: 15px 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  padding: 18px 25px;
+  background: rgba(10,15,30,0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  color: #1e1e1e;
+  color: #fff;
 }
 
-/* DESKTOP NAV */
+/* Desktop menu */
 .nav-links {
   display: flex;
-  gap: 35px;
+  gap: 40px;
 }
 
-.nav-links li {
-  list-style: none;
+.nav-links li a {
+  font-size: 18px;
+  color: white;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 600;
-  color: #1e293b;
-  transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #38bdf8;
-}
-
-/* HAMBURGER BUTTON */
+/* Mobile hamburger */
 .menu-btn {
   background: none;
   border: none;
-  display: none; /* hidden in desktop */
   cursor: pointer;
+  display: none;
 }
 
-/* MOBILE MENU (HIDDEN BY DEFAULT) */
+/* Mobile dropdown */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: white;
-  padding: 20px 0;
-  gap: 18px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  background: rgba(10,15,30,0.95);
+  padding: 18px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .mobile-menu li {
-  list-style: none;
-}
-
-.mobile-menu a {
-  text-decoration: none;
+  padding: 16px 0;
   font-size: 18px;
-  font-weight: 600;
-  color: #1e293b;
 }
 
-/* MOBILE RESPONSIVE BEGINS */
+.mobile-menu li a {
+  color: white;
+}
+
+/* Show menu */
+.mobile-menu.show {
+  display: flex !important;
+}
+
+/* ============================= */
+/*           MOBILE ONLY         */
+/* ============================= */
 @media (max-width: 768px) {
-
-  /* Increase navbar height */
-  .navbar {
-    padding: 20px 22px;
-  }
-
-  /* show hamburger icon */
-  .menu-btn {
-    display: block;
-  }
-
-  /* hide desktop menu */
   .nav-links {
     display: none;
   }
 
-  /* show the dropdown menu */
-  .mobile-menu {
-    display: flex;
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    padding: 14px 20px;
   }
 }
-
 /* ----------------------------- */
 /* 🔹 HERO (HOME)                */
 /* ----------------------------- */

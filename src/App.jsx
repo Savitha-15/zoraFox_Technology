@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react"; // install using: npm install lucide-react
 import ContactForm from "./components/ContactForm";
+import "./styles/styles.css";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
