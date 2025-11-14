@@ -1,4 +1,4 @@
-/* ----------------------------- */
+  /* ----------------------------- */
 /* 🔹 GLOBAL STYLES              */
 /* ----------------------------- */
 :root {
@@ -95,50 +95,101 @@ body {
   color: var(--primary);
 }
 
-/* ----------------------------- */
-/* 🔹 NAVBAR — Mobile Version    */
-/* ----------------------------- */
-
+/* Mobile styles */
 @media (max-width: 900px) {
-  /* Hide desktop links */
   .nav-links {
     display: none;
   }
 
-  /* Show hamburger */
   .menu-btn {
     display: block;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
-  /* Slightly taller navbar on mobile */
-  .navbar {
-    padding: 20px 8%;
-  }
-
-  /* Mobile menu dropdown */
   .mobile-menu {
     background: rgba(10, 15, 30, 0.95);
-    width: 100%;
     position: absolute;
-    top: 70px;
+    width: 100%;
+    top: 65px;
     left: 0;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    z-index: 999;
+    gap: 15px;
   }
 
   .mobile-menu a {
     color: white;
-    font-size: 1.1rem;
     text-decoration: none;
     font-weight: 500;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--primary);
+  }
+}
+
+/* 📱 MOBILE MENU FIX */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.show {
+  display: flex !important;
+}
+
+/* ----------------------------- */
+/* 🔹 HERO (HOME)                */
+/* ----------------------------- */
+.hero-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(0, 224, 255, 0.15), transparent 70%), var(--dark-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 150px 20px 100px;
+  animation: fadeUp 1.2s ease-in-out;
+}
+
+.hero-section h2 {
+  font-size: 3rem;
+  background: var(--accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  animation: popIn 1s ease forwards;
+}
+
+.hero-section p {
+  max-width: 800px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -213,21 +264,20 @@ body {
   line-height: 1.6;
   opacity: 0.9;
 }
-/* ----------------------------- */
-/* 🔹 ABOUT — Mobile Vertical Layout */
-/* ----------------------------- */
 
+/* Responsive */
 @media (max-width: 768px) {
-  .about-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .about-card {
-    width: 100%;
+  .emoji {
+    font-size: 2.5rem;
   }
 }
+/* 📱 ABOUT SECTION MOBILE FIX — stack cards vertically */
+@media (max-width: 768px) {
+  .about-boxes {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
 /* ----------------------------- */
 /* 🔹 SERVICES (unchanged)       */
@@ -426,27 +476,33 @@ body {
   color: var(--primary);
   font-weight: 500;
 }
-/* ----------------------------- */
-/* 🔹 CONTACT — Mobile Order Fix */
-/* ----------------------------- */
 
+/* ✅ Responsive Layout */
 @media (max-width: 900px) {
   .contact-grid {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  /* Force the form first */
-  .contact-left {
-    order: 1;
-  }
-
-  /* Contact info second */
+  .contact-left,
   .contact-right {
-    order: 2;
+    padding: 25px;
+  }
+
+  .contact-title {
+    margin-bottom: 30px;
   }
 }
 
+/* 📱 CONTACT SECTION — Form first, details second */
+@media (max-width: 900px) {
+  .contact-left {
+    order: 1 !important;
+  }
+  .contact-right {
+    order: 2 !important;
+  }
+}
 
 /* ----------------------------- */
 /* 🔹 SCROLL ANIMATION (Generic) */
