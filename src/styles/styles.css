@@ -212,6 +212,11 @@ body {
   animation: popEmoji 1s ease forwards;
 }
 
+.about-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
 @keyframes popEmoji {
   0% {
     transform: scale(0.6);
@@ -457,18 +462,21 @@ body {
     margin-bottom: 30px;
   }
 }
-
 @media (max-width: 900px) {
-  .contact-container {
+  .contact-grid {
+    display: flex;
     flex-direction: column;
   }
+
   .contact-left {
-    order: 1 !important;
+    order: 1;
   }
+
   .contact-right {
-    order: 2 !important;
+    order: 2;
   }
 }
+
 
 
 /* ----------------------------- */

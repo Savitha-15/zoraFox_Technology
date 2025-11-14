@@ -7,7 +7,7 @@ import "./styles/styles.css";
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
+    const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
     { name: "Our Services", href: "#services" },
@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <div className="homepage" id="home">
-      {/* ✅ Navbar */}
+      {/* ==================== NAVBAR ==================== */}
       <motion.nav
         className="navbar"
         initial={{ y: -50, opacity: 0 }}
@@ -24,6 +24,8 @@ export default function App() {
         transition={{ duration: 0.6 }}
       >
         <div className="nav-container">
+
+          {/* Logo */}
           <h1 className="logo">Nuvoteh</h1>
 
           {/* Desktop Menu */}
@@ -35,33 +37,31 @@ export default function App() {
             ))}
           </ul>
 
-          {/* Hamburger Button (Mobile) */}
+          {/* Hamburger Button */}
           <button
             className="menu-btn"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Dropdown */}
-        {isOpen && (
-          <motion.ul
-            className="mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a href={link.href} onClick={() => setIsOpen(false)}>
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </motion.ul>
-        )}
+        {/* =============== MOBILE MENU DROPDOWN =============== */}
+        <motion.ul
+          className={`mobile-menu ${isOpen ? "show" : ""}`}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a href={link.href} onClick={() => setIsOpen(false)}>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </motion.ul>
       </motion.nav>
 
       {/* ✅ Hero Section */}
