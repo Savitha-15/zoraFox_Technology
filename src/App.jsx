@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ContactForm from "./components/ContactForm";
 import "./styles/styles.css";
-import logo from '../assets/zorafrox.jpeg';
+
+
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function App() {
       {/* ✅ Navbar */}
       <motion.nav className="navbar">
         <div className="nav-container">
-          <h1 className="logo">zoraFox Technology</h1>
+          <h1 className="logo">ZoraFox Technology</h1>
 
           {/* Desktop Menu */}
           <ul className="nav-links">
@@ -48,28 +49,44 @@ export default function App() {
           ))}
         </ul>
       </motion.nav>
+<motion.header className="hero-section">
+  <motion.div 
+    className="hero-container"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+  >
 
-      {/* ✅ Hero Section */}
-      <motion.header
-        className="hero-section"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-          <img 
-    src="/assets/zorafrox.jpeg" 
-    alt="zoraFox Technology Logo" 
-    className="hero-logo"
-  />
+    {/* LEFT — IMAGE */}
+    <motion.div 
+      className="hero-image"
+      initial={{ x: -50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <img src="/assets/zorafox.jpeg" alt="Zorafox Logo" />
+    </motion.div>
 
-        <h2 className="highlight">Welcome to zoraFox_Technology</h2>
-        <p className="subtitle">Innovative Technology for a Smarter Tomorrow.</p>
-        <p>
-          Welcome to zoraFox_Technology - Empowering Digital Innovation. zoraFox_Technology, we turn
-          ideas into exceptional digital solutions.
-        </p>
-        <p>Our goal is simple — Innovation that empowers success.</p>
-      </motion.header>
+    {/* RIGHT — CONTENT */}
+    <motion.div 
+      className="hero-content"
+      initial={{ x: 50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2>Welcome to ZoraFox_Technology</h2>
+      <p>Innovative Technology for a Smarter Tomorrow.</p>
+      <p>
+        Welcome to ZoraFox_Technology - Empowering Digital Innovation. 
+        We turn ideas into exceptional digital solutions.
+      </p>
+      <p>Our goal is simple — Innovation that empowers success.</p>
+    </motion.div>
+
+  </motion.div>
+</motion.header>
+
+
 
       {/* ✅ About Us */}
       <motion.section className="vision" id="about">
