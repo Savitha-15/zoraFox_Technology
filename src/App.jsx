@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ContactForm from "./components/ContactForm";
 import "./styles/styles.css";
+import logo from '../assets/zorafrox.jpeg';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,6 +56,12 @@ export default function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
+          <img 
+    src="/assets/zorafrox.jpeg" 
+    alt="zoraFox Technology Logo" 
+    className="hero-logo"
+  />
+
         <h2 className="highlight">Welcome to zoraFox_Technology</h2>
         <p className="subtitle">Innovative Technology for a Smarter Tomorrow.</p>
         <p>
