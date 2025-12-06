@@ -19,7 +19,7 @@ export default function App() {
       {/* ✅ Navbar */}
       <motion.nav className="navbar">
         <div className="nav-container">
-          <h1 className="logo">Nuvoteh</h1>
+          <h1 className="logo">zoraFox Technology</h1>
 
           {/* Desktop Menu */}
           <ul className="nav-links">
@@ -55,10 +55,10 @@ export default function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="highlight">Welcome to Nuvoteh</h2>
+        <h2 className="highlight">Welcome to zoraFox_Technology</h2>
         <p className="subtitle">Innovative Technology for a Smarter Tomorrow.</p>
         <p>
-          Welcome to NUVOTEH - Empowering Digital Innovation. At NUVOTEH, we turn
+          Welcome to zoraFox_Technology - Empowering Digital Innovation. zoraFox_Technology, we turn
           ideas into exceptional digital solutions.
         </p>
         <p>Our goal is simple — Innovation that empowers success.</p>
@@ -73,7 +73,7 @@ export default function App() {
             <div className="emoji">👥</div>
             <h3>Who We Are</h3>
             <p>
-              NUVOTEH is a creative and technology-based company founded by
+             zoraFox_Technology is a creative and technology-based company founded by
               passionate innovators.
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function App() {
                 href="https://www.instagram.com/nuvoteh_official"
                 target="_blank"
               >
-                @nuvoteh_official
+                @zoraFox_Technology_official
               </a>
             </p>
 
@@ -212,7 +212,7 @@ export default function App() {
           </div>
         </div>
 
-        <p className="footer-end">© 2025 Nuvoteh. All Rights Reserved.</p>
+        <p className="footer-end">© 2025 zoraFox_Technology. All Rights Reserved.</p>
       </motion.footer>
     </div>
   );
