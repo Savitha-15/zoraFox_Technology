@@ -31,26 +31,23 @@ export default function App() {
               </li>
             ))}
           </ul>
-
-          {/* Hamburger Button */}
-     <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
- {isOpen && <div className="menu-overlay" onClick={() => setIsOpen(false)} />}
-
+           </div>
+{/* Hamburger Button */}
+<button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+  {isOpen ? <X size={26} /> : <Menu size={26} />}
 </button>
 
+<ul className={`mobile-menu ${isOpen ? "show" : ""}`}>
+  {navLinks.map((link) => (
+    <li key={link.name}>
+      <a href={link.href} onClick={() => setIsOpen(false)}>
+        {link.name}
+      </a>
+    </li>
+  ))}
+</ul>
 
-        </div>
 
-        {/* Mobile Menu */}
-        <ul className={`mobile-menu ${isOpen ? "show" : ""}`}>
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a href={link.href} onClick={() => setIsOpen(false)}>
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
       </motion.nav>
 <motion.header className="hero-section">
   <motion.div
