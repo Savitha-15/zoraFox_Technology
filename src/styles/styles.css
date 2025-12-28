@@ -799,34 +799,38 @@ body {
   background: #0aa36c;
   color: #ffffff;
 }
-/* ================= MOBILE NAVBAR ================= */
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
+/* ===================== MOBILE NAVBAR FIX ===================== */
+@media screen and (max-width: 768px) {
 
-@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  /* Hide desktop menu */
   .nav-links {
-    display: none;
+    display: none !important;
   }
 
+  /* Show hamburger */
   .menu-btn {
-    display: block;
+    display: block !important;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 2000;
   }
 
+  /* Mobile menu */
   .mobile-menu {
+    display: none;
     position: absolute;
-    top: 64px;
+    top: 60px;
     left: 0;
     width: 100%;
     background: #0f172a;
-    display: none;
     flex-direction: column;
-    padding: 12px 0;
-    z-index: 1000;
+    z-index: 1500;
   }
 
   .mobile-menu.show {
@@ -834,21 +838,21 @@ body {
   }
 
   .mobile-menu li {
-    padding: 14px 20px;
+    padding: 14px 0;
     text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .mobile-menu a {
-    color: #fff;
+    color: white;
     font-size: 16px;
     font-weight: 500;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero-section {
-    min-height: 80vh;
-    padding: 40px 16px;
-    text-align: center;
+    min-height: 75vh;
+    padding: 32px 16px;
   }
 
   .hero-content h2 {
@@ -858,10 +862,11 @@ body {
 
   .hero-content p {
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .hero-btns {
+    display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 20px;
@@ -871,21 +876,12 @@ body {
     width: 100%;
   }
 }
-@media (max-width: 768px) {
-  .about-boxes {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0 16px;
-  }
+@media screen and (max-width: 768px) {
 
-  .about-card {
-    padding: 20px;
-    border-radius: 16px;
-  }
-}
-@media (max-width: 768px) {
-  .service-grid {
-    grid-template-columns: 1fr;
+  .about-boxes,
+  .service-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
     gap: 16px;
     padding: 0 16px;
   }
@@ -893,17 +889,5 @@ body {
   .service-card img {
     height: 160px;
     object-fit: cover;
-  }
-}
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 16px;
-  }
-
-  .contact-right p {
-    font-size: 14px;
-    line-height: 1.6;
   }
 }
