@@ -50,43 +50,30 @@ export default function App() {
         </ul>
       </motion.nav>
 <motion.header className="hero-section">
-  <motion.div 
+  <motion.div
     className="hero-container"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
   >
-
-    {/* LEFT — IMAGE */}
-    <motion.div 
-      className="hero-image"
-      initial={{ x: -50, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <img src="/assets/zorafox.jpeg" alt="Zorafox Logo" />
-    </motion.div>
-
-    {/* RIGHT — CONTENT */}
-    <motion.div 
-      className="hero-content"
-      initial={{ x: 50, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
+    <motion.div
+      className="hero-content center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
       <h2>Welcome to ZoraFox_Technology</h2>
-      <p>Innovative Technology for a Smarter Tomorrow.</p>
+      <h4>Innovative Technology for a Smarter Tomorrow.</h4>
+
       <p>
-        Welcome to ZoraFox_Technology - Empowering Digital Innovation. 
+        Welcome to ZoraFox_Technology - Empowering Digital Innovation.
         We turn ideas into exceptional digital solutions.
       </p>
+
       <p>Our goal is simple — Innovation that empowers success.</p>
     </motion.div>
-
   </motion.div>
 </motion.header>
-
-
 
       {/* ✅ About Us */}
       <motion.section className="vision" id="about">
@@ -179,6 +166,11 @@ export default function App() {
               title: "Graphic Design",
               desc: "Creative designs.",
             },
+             {
+              img: "/assets/tshirtprinting.jpeg",
+              title: "Customized T-Shirt",
+              desc: "Create your own vibe.",
+            },
           ].map((service) => (
             <div className="service-card" key={service.title}>
               <img src={service.img} alt={service.title} />
@@ -230,14 +222,14 @@ export default function App() {
             <p>
               <strong>Contacts:</strong>
               <br />📱 99762 57449  
-              <br />📱 91508 56346  
+              <br />📱 91508 56346 
+              <br />📱 86104 33937 
               <br />📱 83442 29777
             </p>
           </div>
         </div>
 
-        <p className="footer-end">© 2025 zoraFox_Technology. All Rights Reserved.</p>
-      </motion.footer>
+    </motion.footer>
     </div>
   );
 }

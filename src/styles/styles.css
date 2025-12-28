@@ -549,3 +549,67 @@ body {
     max-width: 320px;
   }
 }
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+  background-color: #e8f6f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+.hero-content.center {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  color: #0aa36c;
+  margin-bottom: 15px;
+}
+
+.hero-content h4 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: #34495e;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+.navbar {
+  background: #2d3642;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Georgia", serif;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.nav-links li a:hover {
+  color: #0aa36c;
+}
