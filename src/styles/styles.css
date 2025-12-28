@@ -1096,3 +1096,9 @@ html {
   color: #f39c12;
   transform: translateX(6px);
 }
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}

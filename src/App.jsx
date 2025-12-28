@@ -34,7 +34,8 @@ export default function App() {
 
           {/* Hamburger Button */}
      <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
-  {isOpen ? <X size={30} /> : <Menu size={30} />}
+ {isOpen && <div className="menu-overlay" onClick={() => setIsOpen(false)} />}
+
 </button>
 
 
