@@ -947,3 +947,53 @@ body {
     margin: auto;
   }
 }
+/* ===== Hero Section Mobile Adjustments ===== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem 2rem; /* reduce top and bottom padding */
+  }
+
+  .hero-container {
+    max-width: 90%; /* take most of screen width */
+    margin: auto;
+  }
+
+  .hero-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* ===== About / Services / Cards Mobile Adjustments ===== */
+@media (max-width: 768px) {
+  .about-boxes, .service-grid {
+    grid-template-columns: 1fr; /* one box per row */
+    gap: 1.5rem;
+  }
+
+  .about-card, .service-card {
+    padding: 1rem 0.8rem; /* maintain good size */
+  }
+
+  .service-card img {
+    height: auto;
+    width: 100%; /* fit nicely in single column */
+    border-radius: 8px;
+  }
+
+  .about-card h3, .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-card p, .service-card p {
+    font-size: 0.95rem;
+  }
+}
