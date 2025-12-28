@@ -1032,3 +1032,55 @@ body {
     height: auto !important;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+/* =========================
+   FULLSCREEN MOBILE MENU
+========================= */
+
+.mobile-menu {
+  position: fixed;              /* VERY IMPORTANT */
+  top: 0;
+  left: 0;
+  width: 100vw;                 /* Full width */
+  height: 100vh;                /* Full height */
+  background: #0b3c5d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* Center vertically */
+  align-items: center;          /* Center horizontally */
+  gap: 2rem;
+  z-index: 9999;
+
+  /* Hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
+}
+
+/* When menu is open */
+.mobile-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Menu links */
+.mobile-menu li {
+  list-style: none;
+}
+
+.mobile-menu li a {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mobile-menu li a:hover {
+  transform: scale(1.15);
+  color: #f39c12;
+}

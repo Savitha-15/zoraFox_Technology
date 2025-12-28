@@ -33,9 +33,16 @@ export default function App() {
           </ul>
 
           {/* Hamburger Button */}
-          <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+         <button
+  className="menu-btn"
+  onClick={() => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = !isOpen ? "hidden" : "auto";
+  }}
+>
+  {isOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
+
         </div>
 
         {/* Mobile Menu */}
@@ -84,11 +91,18 @@ export default function App() {
 
       <p>Our goal is simple — Innovation that empowers success.</p>
     </motion.div>
+   <motion.div
+  className="hero-btns"
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 0.5, duration: 0.5, type: "spring", stiffness: 120 }}
+>
+  <a href="#services" className="btn primary-btn">Get Started</a>
+  <a href="#contact" className="btn outline-btn">Contact Us</a>
+</motion.div>
+
   </motion.div>
-    <div className="hero-btns">
-    <button className="btn primary-btn">Get Started</button>
-    <button className="btn outline-btn">Contact Us</button>
-  </div>
+  
    <div className="scroll-down">
       <span></span>
     </div>
