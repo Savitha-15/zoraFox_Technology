@@ -997,3 +997,38 @@ body {
     font-size: 0.95rem;
   }
 }
+/* Mobile styles for screens <= 768px */
+@media only screen and (max-width: 768px) {
+  /* Hero Section */
+  .homepage .hero-section {
+    padding: 3rem 1rem 2rem !important;
+  }
+  .homepage .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+  .homepage .hero-section p {
+    font-size: 0.95rem !important;
+  }
+  .homepage .hero-btns {
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+
+  /* Boxes One by One */
+  .homepage .about-boxes,
+  .homepage .service-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .homepage .about-card,
+  .homepage .service-card {
+    padding: 1rem !important;
+  }
+
+  .homepage .service-card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
