@@ -1035,52 +1035,64 @@ body {
 html {
   scroll-behavior: smooth;
 }
-/* =========================
-   FULLSCREEN MOBILE MENU
-========================= */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;          /* WHITE ICON */
+  z-index: 10001;
+}
+
+/* Increase touch area on mobile */
+.menu-btn svg {
+  stroke-width: 2.5;
+}
+/* ===============================
+   RIGHT SLIDE MOBILE MENU
+================================ */
 
 .mobile-menu {
-  position: fixed;              /* VERY IMPORTANT */
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;                 /* Full width */
-  height: 100vh;                /* Full height */
+  right: 0;
+  width: 75%;              /* SHORT WIDTH */
+  max-width: 300px;
+  height: 100vh;
   background: #0b3c5d;
+  padding-top: 5rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;      /* Center vertically */
-  align-items: center;          /* Center horizontally */
-  gap: 2rem;
-  z-index: 9999;
+  gap: 1.5rem;
+
+  z-index: 10000;
 
   /* Hidden state */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-100%);
-  transition: all 0.4s ease;
+  transform: translateX(100%);
+  transition: transform 0.35s ease-in-out;
 }
 
-/* When menu is open */
+/* Show menu */
 .mobile-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-/* Menu links */
+/* Menu items */
 .mobile-menu li {
   list-style: none;
+  padding-left: 2rem;
 }
 
 .mobile-menu li a {
-  font-size: 2rem;
-  color: #fff;
+  color: #ffffff;
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  display: block;
+  transition: all 0.3s ease;
 }
 
 .mobile-menu li a:hover {
-  transform: scale(1.15);
   color: #f39c12;
+  transform: translateX(6px);
 }

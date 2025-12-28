@@ -33,15 +33,10 @@ export default function App() {
           </ul>
 
           {/* Hamburger Button */}
-         <button
-  className="menu-btn"
-  onClick={() => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = !isOpen ? "hidden" : "auto";
-  }}
->
-  {isOpen ? <X size={28} /> : <Menu size={28} />}
+     <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+  {isOpen ? <X size={30} /> : <Menu size={30} />}
 </button>
+
 
         </div>
 
