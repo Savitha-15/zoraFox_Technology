@@ -1102,3 +1102,51 @@ html {
   margin: 0 auto;
   font-size: 20px;
 }
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+@media (max-width: 768px) {
+  .hero-btns {
+    flex-direction: column;
+  }
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-section {
+  padding: 80px 20px;
+}
+/* ===== FORCE DESKTOP HERO FIX ===== */
+@media (min-width: 769px) {
+  .hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-content {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .hero-btns {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-btns {
+    flex-direction: column !important;
+  }
+}
