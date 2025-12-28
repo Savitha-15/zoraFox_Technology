@@ -62,7 +62,14 @@ export default function App() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <h2>Welcome to ZoraFox_Technology</h2>
+     <motion.h2
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2 }}
+>
+  Welcome to ZoraFox_Technology
+</motion.h2>
+
       <h4>Innovative Technology for a Smarter Tomorrow.</h4>
 
       <p>

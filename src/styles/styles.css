@@ -613,3 +613,44 @@ body {
 .nav-links li a:hover {
   color: #0aa36c;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(31,41,51,0.85);
+}
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #38BDF8;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+.about-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
+.service-card:hover img {
+  transform: scale(1.08);
+}
+
+.service-card {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+.primary-btn:hover {
+  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
